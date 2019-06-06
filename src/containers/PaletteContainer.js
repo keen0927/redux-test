@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import Palette from '../components/Palette';
+import { connect } from 'react-redux';
 import { changeColor } from '../store/modules/counter';
 
+class PaletteContainer extends Component {
 
-export class PaletteContainer extends Component {
-
-    handleSelect = (color) => {
+    handleSelect = color => {
         const { changeColor } = this.props;
         console.log('what');
         changeColor(color);
@@ -15,10 +14,11 @@ export class PaletteContainer extends Component {
     render() {
 
         const { color } = this.props;
+        const { handleSelect } = this;
 
         return (
             <div>
-                <Palette onSelect={this.handleSelect} selected={color} />
+                <Palette onSelect={handleSelect} selected={color} />
             </div>
         )
     }
@@ -30,9 +30,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     changeColor: color => dispatch(changeColor(color))
-});
-
-
+})
 
 
 export default connect(
