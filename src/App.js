@@ -12,11 +12,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <Palette selected="red" /> */}
-        <PaletteContainer />
-        {/* <Counter value={0} color="red" /> */}
+        {/* <PaletteContainer />
         <CounterContainer />
-        <WaitingList />
+        <WaitingList /> */}
       </div>
     );
   }
