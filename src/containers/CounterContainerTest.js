@@ -32,13 +32,14 @@ export class CounterContainerTest extends Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    number: state.number,
-    color: state.color
+const mapStateToProps = (counter) => ({
+    number: counter.number,
+    color: counter.color
 })
 
 const mapDispatchToProps = {
-    
+    increment,
+    decrement
 }
 
 export default connect(
